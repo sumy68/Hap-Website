@@ -2059,3 +2059,18 @@ main.section form button{
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px){
+  .footer__grid{
+    grid-template-columns: 1fr;
+  }
+  
+  .footer__bottom{
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer__links{
+    flex-direction: column;
+  }
+}
