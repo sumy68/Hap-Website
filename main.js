@@ -34,8 +34,8 @@ function setYear() {
    Init nach Partials
 ========================= */
 (async function () {
-  await loadPartial("#site-header", "/partials/header.html");
-  await loadPartial("#site-footer", "/partials/footer.html");
+  await loadPartial("#site-header", "/Hap-Website/partials/header.html");
+  await loadPartial("#site-footer", "/Hap-Website/partials/footer.html");
 
   initNav();
   setYear();
