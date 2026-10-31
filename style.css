@@ -1532,6 +1532,11 @@ a:hover{opacity:.8}
   border-color: rgba(107,78,255,.35);
 }
 
+/* Sprungziele: Abstand zum Sticky-Header */
+.karriere [id]{
+  scroll-margin-top: 163px;
+}
+
 .karriere-section{
   padding: clamp(36px, 4.5vw, 64px) 0;
 }
