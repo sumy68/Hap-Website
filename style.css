@@ -1402,6 +1402,11 @@ a:hover{opacity:.8}
   padding: 0 1rem;
 }
 
+/* Über uns: Abschnitte im Container, Seitenabstand kommt vom Container */
+.about-page > .container > .about-section{
+  padding-inline: 0;
+}
+
 /* Bogen-Grafiken als Banner im Container: Höhe folgt dem Bildverhältnis, Bild ohne Beschnitt */
 .about-hero--ueber,
 .about-hero--spenden{
