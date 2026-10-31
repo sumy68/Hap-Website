@@ -1,0 +1,10 @@
+# Clean URLs laufen ohne Rewrite über index.html in den Ordnern
+DirectoryIndex index.html
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# HTTPS erzwingen, www auf die Domain ohne www umleiten
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://happiness-ev.com%{REQUEST_URI} [R=301,L]

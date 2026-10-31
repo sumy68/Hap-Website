@@ -1,2 +1,5 @@
 .DS_Store
 .claude/
+/deploy/
+/happiness-website.zip
+.gstack/
