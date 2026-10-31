@@ -1419,7 +1419,22 @@ a:hover{opacity:.8}
   );
 }
 .about-hero--spenden .about-hero__title{
-  text-shadow: 0 2px 14px rgba(60,20,90,.75);
+  align-items: flex-start;
+  margin: 0;
+  padding-top: 26px;
+  line-height: 1.1;
+  color: #4A266E;
+}
+@media (max-width: 1600px){
+  .about-hero--spenden .about-hero__title{
+    padding-top: 50px;
+  }
+}
+@media (max-width: 780px){
+  .about-hero--spenden .about-hero__title{
+    padding-top: min(7vw, 50px);
+    font-size: min(8vw, 40px);
+  }
 }
 
 .cay-poster {
