@@ -3,8 +3,12 @@ DirectoryIndex index.html
 Options -Indexes
 ErrorDocument 404 /404.html
 
-# HTTPS erzwingen, www auf die Domain ohne www umleiten
 RewriteEngine On
+
+# Frühere Unterseite, zusammengeführt in /erfolge/
+RewriteRule ^abgeschlossene-kampagnen/?$ https://happiness-ev.com/erfolge/#vergangene-kampagnen [R=301,NE,L]
+
+# HTTPS erzwingen, www auf die Domain ohne www umleiten
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://happiness-ev.com%{REQUEST_URI} [R=301,L]

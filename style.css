@@ -1533,7 +1533,8 @@ a:hover{opacity:.8}
 }
 
 /* Sprungziele: Abstand zum Sticky-Header */
-.karriere [id]{
+.karriere [id],
+#vergangene-kampagnen{
   scroll-margin-top: 163px;
 }
 
