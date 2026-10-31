@@ -1,11 +1,46 @@
 /* =========================
+   Seiten-Basis (aus dem eigenen <script src>)
+========================= */
+const SITE_BASE = new URL(".", document.currentScript.src);
+
+/* =========================
+   noindex nur auf *.github.io
+========================= */
+function isGithubPagesHost(hostname) {
+  return hostname === "github.io" || hostname.endsWith(".github.io");
+}
+
+if (isGithubPagesHost(location.hostname)) {
+  const robots = document.createElement("meta");
+  robots.name = "robots";
+  robots.content = "noindex, nofollow";
+  document.head.appendChild(robots);
+}
+
+/* =========================
    Partials laden
 ========================= */
-async function loadPartial(selector, url) {
+const NON_LOCAL_LINK = /^([a-z][a-z0-9+.-]*:|#|\/\/)/i;
+
+function resolvePartialLinks(root) {
+  root.querySelectorAll("[href], [src]").forEach((node) => {
+    ["href", "src"].forEach((attr) => {
+      const value = node.getAttribute(attr);
+      if (value === null || NON_LOCAL_LINK.test(value)) return;
+      node.setAttribute(attr, new URL(value, SITE_BASE).href);
+    });
+  });
+}
+
+async function loadPartial(selector, path) {
   const el = document.querySelector(selector);
   if (!el) return;
-  const res = await fetch(url);
-  el.innerHTML = await res.text();
+  const res = await fetch(new URL(path, SITE_BASE));
+  // <template> ist inert: Bilder laden erst mit den aufgelösten Pfaden
+  const template = document.createElement("template");
+  template.innerHTML = await res.text();
+  resolvePartialLinks(template.content);
+  el.replaceChildren(template.content);
 }
 
 /* =========================
@@ -34,8 +69,8 @@ function setYear() {
    Init nach Partials
 ========================= */
 (async function () {
-  await loadPartial("#site-header", "/Hap-Website/partials/header.html");
-  await loadPartial("#site-footer", "/Hap-Website/partials/footer.html");
+  await loadPartial("#site-header", "partials/header.html");
+  await loadPartial("#site-footer", "partials/footer.html");
 
   initNav();
   setYear();
