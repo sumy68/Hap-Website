@@ -2085,8 +2085,10 @@ main.section form button{
 }
 
 @media (max-width: 780px){
-  .campaigns{
-    grid-template-columns: 1fr;
+  .campaigns,
+  .success-highlights,
+  .photo-grid{
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
