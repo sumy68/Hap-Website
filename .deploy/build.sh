@@ -6,8 +6,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/deploy"
 ZIP="$ROOT/happiness-website.zip"
 
-# Nirgends referenzierte Originalbilder
-UNUSED_ASSETS='^assets/(about/handabdruecke\.png|about/hero-event\.(jpg|webp)|about/hero-(gruppe-original\.png|rot-original\.jpg)|events/cay-poster\.jpg|spenden/spende-1-rot-original\.jpg)$'
+# Auf keiner Seite sichtbar referenzierte Dateien (Originale, ausgeblendete Team-Fotos)
+UNUSED_ASSETS='^assets/(about/handabdruecke\.png|about/hero-event\.(jpg|webp)|about/hero-(gruppe-original\.png|rot-original\.jpg)|about/mission\.jpg|events/cay-poster\.jpg|spenden/spende-1-rot-original\.jpg|team/.*)$'
 REPO_ONLY='^(\.deploy/|\.gitignore$|README\.md$|CNAME$)'
 
 cd "$ROOT"
@@ -24,6 +24,9 @@ git ls-files --cached --exclude-standard \
     done
 
 cp "$ROOT/.deploy/.htaccess" "$ROOT/.deploy/404.html" "$OUT/"
+
+find "$OUT" -type d -exec chmod 755 {} +
+find "$OUT" -type f -exec chmod 644 {} +
 
 (cd "$OUT" && zip -qrX "$ZIP" .)
 echo "Paket: $OUT ($(find "$OUT" -type f | wc -l | tr -d ' ') Dateien, $(du -sh "$OUT" | cut -f1))"
