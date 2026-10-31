@@ -637,10 +637,6 @@ a:hover{opacity:.8}
   display:block;
 }
 
-.about-hero__img--top{
-  object-position: center top;
-}
-
 .about-hero__overlay{
   position:absolute;
   inset:0;
@@ -1406,10 +1402,19 @@ a:hover{opacity:.8}
   padding: 0 1rem;
 }
 
-/* Spendenaktionen: Karton unten im Bild, helles Motiv nicht abdunkeln */
-.about-hero--spenden .about-hero__img{
-  object-position: center bottom;
+/* Bogen-Grafiken: Header-Höhe folgt dem Bildverhältnis, Bild ohne Beschnitt */
+.about-hero--ueber,
+.about-hero--spenden{
+  height: auto;
 }
+.about-hero--ueber{
+  aspect-ratio: 1920 / 880;
+}
+.about-hero--spenden{
+  aspect-ratio: 1916 / 821;
+}
+
+/* Spendenaktionen: helles Motiv nicht abdunkeln, Überschrift in der freien Fläche oben im Bogen */
 .about-hero--spenden .about-hero__overlay{
   background: linear-gradient(
     180deg,
@@ -1419,22 +1424,12 @@ a:hover{opacity:.8}
   );
 }
 .about-hero--spenden .about-hero__title{
-  align-items: flex-start;
+  inset: 23% 0 auto;
   margin: 0;
-  padding-top: 26px;
+  transform: translateY(-50%);
+  font-size: clamp(24px, 4.2vw, 72px);
   line-height: 1.1;
   color: #4A266E;
-}
-@media (max-width: 1600px){
-  .about-hero--spenden .about-hero__title{
-    padding-top: 50px;
-  }
-}
-@media (max-width: 780px){
-  .about-hero--spenden .about-hero__title{
-    padding-top: min(7vw, 50px);
-    font-size: min(8vw, 40px);
-  }
 }
 
 .cay-poster {
@@ -2158,15 +2153,4 @@ main.section form button{
 
 .events-list + .btn-row{
   margin-bottom: 48px;
-}
-
-/* Mobile: Header in voller Bildhöhe, Motiv im Bild ohne Beschnitt */
-@media (max-width: 780px){
-  .about-hero{
-    height: auto;
-  }
-  .about-hero__img{
-    position: static;
-    height: auto;
-  }
 }
