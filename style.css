@@ -1402,16 +1402,26 @@ a:hover{opacity:.8}
   padding: 0 1rem;
 }
 
-/* Bogen-Grafiken: Header-Höhe folgt dem Bildverhältnis, Bild ohne Beschnitt */
+/* Bogen-Grafiken: Höhe folgt dem Bildverhältnis, begrenzt auf großen Bildschirmen.
+   Das Bild bleibt vollständig; die Flächen daneben führen die Randfarben fort:
+   oben die Eckfarbe, ab der Höhe, in der der Bogen den Bildrand trifft, die helle Farbe. */
 .about-hero--ueber,
 .about-hero--spenden{
   height: auto;
+  max-height: min(560px, 62vh);
+}
+.about-hero--ueber .about-hero__img,
+.about-hero--spenden .about-hero__img{
+  object-fit: contain;
+  object-position: center center;
 }
 .about-hero--ueber{
-  aspect-ratio: 1920 / 880;
+  aspect-ratio: 1920 / 720;
+  background: linear-gradient(#186129 85.6%, #c6f8d2 85.6%);
 }
 .about-hero--spenden{
   aspect-ratio: 1916 / 821;
+  background: linear-gradient(#5f2570 55.1%, #fcc7d5 55.1%);
 }
 
 /* Spendenaktionen: helles Motiv nicht abdunkeln, Überschrift in der freien Fläche oben im Bogen */
@@ -1427,7 +1437,8 @@ a:hover{opacity:.8}
   inset: 23% 0 auto;
   margin: 0;
   transform: translateY(-50%);
-  font-size: clamp(24px, 4.2vw, 72px);
+  /* 9,8 % der sichtbaren Bildhöhe */
+  font-size: max(24px, calc(min(42.85vw, 560px, 62vh) * .098));
   line-height: 1.1;
   color: #4A266E;
 }
