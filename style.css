@@ -1406,6 +1406,22 @@ a:hover{opacity:.8}
   padding: 0 1rem;
 }
 
+/* Spendenaktionen: Karton unten im Bild, helles Motiv nicht abdunkeln */
+.about-hero--spenden .about-hero__img{
+  object-position: center bottom;
+}
+.about-hero--spenden .about-hero__overlay{
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.08) 0%,
+    rgba(0,0,0,.04) 45%,
+    rgba(0,0,0,.18) 100%
+  );
+}
+.about-hero--spenden .about-hero__title{
+  text-shadow: 0 2px 14px rgba(60,20,90,.75);
+}
+
 .cay-poster {
   display: block;
   max-width: 720px;
