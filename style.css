@@ -212,7 +212,11 @@ a:hover{opacity:.8}
   display:block;
   aspect-ratio: 16 / 7;
   object-fit:cover;
+  object-position:center;
   background:#000;
+}
+.hero__media picture{
+  display:block;
 }
 
 /* Footer */
@@ -223,7 +227,7 @@ a:hover{opacity:.8}
 
 .footer__grid{
   display:grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap:32px;
 }
 
@@ -2073,4 +2077,19 @@ main.section form button{
   .footer__links{
     flex-direction: column;
   }
+}
+/* Kampagnen-Karten: Abstand zum Button + einspaltig auf Mobile */
+.campaigns + .btn-row,
+.events-list + .btn-row{
+  margin-top: 24px;
+}
+
+@media (max-width: 780px){
+  .campaigns{
+    grid-template-columns: 1fr;
+  }
+}
+
+.events-list + .btn-row{
+  margin-bottom: 48px;
 }

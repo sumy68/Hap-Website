@@ -20,6 +20,7 @@
         </h1>
 
         <div class="hero__media">
+          <!-- Video vorläufig deaktiviert (assets/hero.mp4 + poster.jpg fehlen noch)
           <video
             class="hero__video"
             src="/Hap-Website/assets/hero.mp4"
@@ -29,6 +30,17 @@
             loop
             playsinline
           ></video>
+          -->
+          <picture>
+            <source srcset="/Hap-Website/assets/about/mission-hero.webp" type="image/webp" />
+            <img
+              class="hero__video"
+              src="/Hap-Website/assets/about/mission-hero.jpg"
+              alt="Ehrenamtliche verteilen Hilfspakete"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -149,7 +161,7 @@
 
       <div class="btn-row center">
         <a class="btn btn--primary" href="/Hap-Website/mitgliedschaft">🤍 Mitglied werden</a>
-        <a class="btn btn--ghost" href="#newsletter">📩 Newsletter</a>
+        <!-- Newsletter vorläufig deaktiviert: <a class="btn btn--ghost" href="#newsletter">📩 Newsletter</a> -->
       </div>
     </div>
   </div>
@@ -209,7 +221,7 @@
 </section>
 
 
-<!-- 8) Newsletter -->
+<!-- 8) Newsletter (vorläufig deaktiviert)
 <section class="section reveal" id="newsletter">
   <div class="container">
     <div class="pillar" style="max-width:980px; margin:0 auto; border-left:6px solid #6b4eff; text-align:center;">
@@ -241,6 +253,7 @@
     </div>
   </div>
 </section>
+-->
 
 <!-- 7) FAQ -->
 <section class="section reveal" id="faq">
