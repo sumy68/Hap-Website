@@ -1114,7 +1114,6 @@ a:hover{opacity:.8}
   background: #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
-.campaign--template{ border-style: dashed; opacity: .85; }
 .campaign__top{ display:flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
 .tag{
   display:inline-flex;
