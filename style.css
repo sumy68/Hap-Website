@@ -2124,3 +2124,14 @@ main.section form button{
 .events-list + .btn-row{
   margin-bottom: 48px;
 }
+
+/* Über uns, Mobile: Header in voller Bildhöhe, Schriftzug im Bild ohne Beschnitt */
+@media (max-width: 780px){
+  .about-hero--fit{
+    height: auto;
+  }
+  .about-hero--fit .about-hero__img{
+    position: static;
+    height: auto;
+  }
+}
