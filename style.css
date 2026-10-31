@@ -309,8 +309,11 @@ a:hover{opacity:.8}
 @media (max-width: 780px){
   .nav-toggle{display:flex}
   .nav{
-    position:fixed;
-    inset:76px 0 auto 0;
+    position:absolute;
+    inset:100% 0 auto 0;
+    /* 147px = Header-Höhe: Menü bleibt auf kleinen Displays scrollbar */
+    max-height:calc(100dvh - 147px);
+    overflow-y:auto;
     background:#fff;
     border-bottom:1px solid var(--line);
     display:none;
