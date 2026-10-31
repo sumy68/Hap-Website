@@ -637,6 +637,10 @@ a:hover{opacity:.8}
   display:block;
 }
 
+.about-hero__img--top{
+  object-position: center top;
+}
+
 .about-hero__overlay{
   position:absolute;
   inset:0;
