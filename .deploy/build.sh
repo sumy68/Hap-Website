@@ -7,7 +7,7 @@ OUT="$ROOT/deploy"
 ZIP="$ROOT/happiness-website.zip"
 
 # Nirgends referenzierte Originalbilder
-UNUSED_ASSETS='^assets/(about/hero-event\.(jpg|webp)|about/hero-(gruppe-original\.png|rot-original\.jpg)|events/cay-poster\.jpg|spenden/spende-1-rot-original\.jpg)$'
+UNUSED_ASSETS='^assets/(about/handabdruecke\.png|about/hero-event\.(jpg|webp)|about/hero-(gruppe-original\.png|rot-original\.jpg)|events/cay-poster\.jpg|spenden/spende-1-rot-original\.jpg)$'
 REPO_ONLY='^(\.deploy/|\.gitignore$|README\.md$|CNAME$)'
 
 cd "$ROOT"
