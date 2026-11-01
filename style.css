@@ -795,6 +795,7 @@ a:hover{opacity:.8}
 /* Join CTA */
 .about-join{
   margin-top: 26px;
+  margin-bottom: 48px;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1416,7 +1417,7 @@ a:hover{opacity:.8}
   border-radius: var(--radius);
 }
 .about-hero--ueber{
-  aspect-ratio: 1920 / 720;
+  aspect-ratio: 1920 / 830;
 }
 .about-hero--spenden{
   aspect-ratio: 1916 / 821;
